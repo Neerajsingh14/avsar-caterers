@@ -5,6 +5,9 @@ import { InstagramIcon, WhatsAppIcon } from "@/components/ui/Icons";
 import { business, emailLink, whatsappLink } from "@/lib/business";
 import { services } from "@/lib/services";
 
+// Developer credit: naam yahan badal sakte ho
+const developer = "Neeraj Rajpurohit";
+
 const social = [
   { label: "Instagram", href: business.instagram, icon: InstagramIcon, external: true },
   { label: "WhatsApp", href: whatsappLink, icon: WhatsAppIcon, external: true },
@@ -84,6 +87,13 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-7 text-center md:flex-row md:text-left">
           <p className="text-sm text-white/50">&copy; 2026 Avsar Caterers. All Rights Reserved.</p>
           <p className="text-xs uppercase tracking-[0.25em] text-white/40">Premium Catering &amp; Hospitality &middot; Rajasthan, India</p>
+        </div>
+
+        <div className="border-t border-white/[0.07] pb-8 pt-5 text-center">
+          <p className="text-xs tracking-wide text-white/45">
+            Designed &amp; developed with <span className="text-gold" aria-label="love">&hearts;</span> by{" "}
+            <span className="font-medium text-gold">{developer}</span>
+          </p>
         </div>
       </div>
     </footer>
