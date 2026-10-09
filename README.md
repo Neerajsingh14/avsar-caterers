@@ -71,3 +71,7 @@ The visitor fills the form, the server (`app/api/enquiry`) validates it, blocks 
 ## Deploying
 
 Deploy on Vercel by importing this repository and adding the environment variables above in the project settings.
+
+## More notes
+
+See [docs/TECH-STACK.md](docs/TECH-STACK.md) for the full tech stack, services, folder guide and daily commands.
