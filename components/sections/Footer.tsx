@@ -7,6 +7,7 @@ import { services } from "@/lib/services";
 
 // Developer credit: naam yahan badal sakte ho
 const developer = "Neeraj Rajpurohit";
+const developerLinkedIn = "https://www.linkedin.com/in/neeraj-singh-rajpurohit/";
 
 const social = [
   { label: "Instagram", href: business.instagram, icon: InstagramIcon, external: true },
@@ -90,9 +91,17 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/[0.07] pb-8 pt-5 text-center">
-          <p className="text-xs tracking-wide text-white/45">
-            Designed &amp; developed with <span className="text-gold" aria-label="love">&hearts;</span> by{" "}
-            <span className="font-medium text-gold">{developer}</span>
+          <p className="text-sm tracking-wide text-white/50">
+            Designed &amp; developed by{" "}
+            <a
+              href={developerLinkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Neeraj Rajpurohit on LinkedIn"
+              className="font-medium text-gold underline-offset-4 transition-colors hover:text-champagne hover:underline"
+            >
+              {developer}
+            </a>
           </p>
         </div>
       </div>

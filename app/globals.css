@@ -3,6 +3,7 @@
 @theme inline {
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-inter), sans-serif;
+  --font-script: var(--font-great-vibes), cursive;
 }
 
 /* Default theme: Black + Gold + Orange */

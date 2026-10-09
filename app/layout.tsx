@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Playfair_Display, Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/ui/Preloader";
 import SmoothScroll from "@/components/ui/SmoothScroll";
@@ -8,6 +8,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const script = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-great-vibes" });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const title = "Avsar Caterers | Premium Wedding & Event Catering in Rajasthan";
@@ -34,7 +35,7 @@ const bootScript =
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={playfair.variable + " " + inter.variable}>
+    <html lang="en" suppressHydrationWarning className={playfair.variable + " " + inter.variable + " " + script.variable}>
       <body className="bg-ink font-sans text-white antialiased">
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <Preloader />
