@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, Loader2, Star } from "lucide-react";
 import { eventTypes, reviewSchema, type ReviewInput } from "@/lib/schemas";
 
 export default function ReviewForm({ onDone }: { onDone: () => void }) {
+  const router = useRouter();
   const [sent, setSent] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
 
@@ -35,6 +37,7 @@ export default function ReviewForm({ onDone }: { onDone: () => void }) {
       const json = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(json.error || "Something went wrong.");
       setSent(true);
+      router.refresh(); // show the new review right away
     } catch (e) {
       setServerError(e instanceof Error ? e.message : "Something went wrong.");
     }
@@ -43,12 +46,12 @@ export default function ReviewForm({ onDone }: { onDone: () => void }) {
   if (sent) {
     return (
       <div className="py-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-gold)] text-[var(--color-on-accent)]">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-accent to-gold text-[var(--color-on-accent)]">
           <Check size={28} strokeWidth={3} />
         </div>
         <h3 className="mt-5 font-serif text-2xl text-white">Thank you!</h3>
         <p className="mt-2 text-sm text-white/65">
-          Your review has been sent to our team. It will appear on the website after approval.
+          Your review has been added. We really appreciate your feedback.
         </p>
         <button onClick={onDone} className="btn-primary mt-6 px-7 py-3 text-sm">
           Close
