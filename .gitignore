@@ -52,3 +52,5 @@ _contact-sheets
 !.env.example
 setup-*.ps1
 test-enquiry.ps1
+
+*.ps1
